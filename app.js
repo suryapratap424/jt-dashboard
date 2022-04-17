@@ -65,27 +65,12 @@ shpfile.once("data:loaded", function () {
 
 function createList(feature,p) {
   // return `<h3>Name : ${feature.properties.Ward_Name}</h3><p>Number : ${feature.properties.Ward_No}</p>`;
-  console.log(p)
+  // console.log(p)
   return `
   <td>${feature.properties.Ward_Name}</td>
   ${Object.values(p).map(e=>`<td>${e}</td>`).join('')}
   `;
 }
-
-function genPop(station) {
-  return `<p>coords:${station.lat},${station.lng}</p>
-  <h2 class='heading'>${station.name}</h2>
-    <div id='${station.lat}'></div>
-    <div class='bottom'>
-    <span class='green'></span>
-    <span>GOOD</span>
-    <span class='yellow'></span>
-    <span>MEDIUM</span>
-    <span class='red'></span>
-    <span>BAD</span></div>
-    `;
-}
-
 // var layer = L.layerGroup();
 // layer.addTo(m);
 function makeRequest(station,feature,tr,layer) {
